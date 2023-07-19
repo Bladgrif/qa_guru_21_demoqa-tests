@@ -1,10 +1,16 @@
 package guru.qa;
 
+import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.*;
 
 import static com.codeborne.selenide.Selenide.open;
 
 public class FirstTest {
+
+    public void setUp() {
+        Configuration.timeout = 6000;
+    }
+
     @BeforeAll
     static void beforeAll() {
         System.out.println("beforeAll");
