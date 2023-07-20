@@ -19,7 +19,7 @@ public class TextBoxTests {
     }
 
     @Test
-    void fillFornTest() {
+    void fillFormTest() {
         open("/text-box");
 
 //        $("[id=userName]").setValue("Roman Grigoriev");
