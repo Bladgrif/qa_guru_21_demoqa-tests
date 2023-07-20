@@ -5,7 +5,7 @@ import org.junit.jupiter.api.*;
 
 import static com.codeborne.selenide.Selenide.open;
 
-public class FirstTest {
+public class JUnit5Examples {
 
     public void setUp() {
         Configuration.timeout = 6000;
