@@ -102,6 +102,6 @@ public class RegistrationForm {
         $(".table-responsive").$(byText("State and City")).parent().shouldHave(text("Uttar Pradesh Agra"));
 
         //Остановка теста на 5 секунд
-        sleep(10000);
+//        sleep(10000);
     }
 }
