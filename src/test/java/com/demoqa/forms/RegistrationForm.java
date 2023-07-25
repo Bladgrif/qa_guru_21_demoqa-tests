@@ -1,4 +1,4 @@
-package com.demoqa;
+package com.demoqa.forms;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;

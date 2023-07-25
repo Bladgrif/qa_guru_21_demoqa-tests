@@ -1,6 +1,5 @@
-package com.demoqa;
+package com.demoqa.elements;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -10,7 +9,7 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
-public class CheckBoxTests {
+public class CheckBox {
 
     @BeforeAll
     static void beforeAll() {
@@ -23,10 +22,11 @@ public class CheckBoxTests {
     }
 
     @Test
-    void CheckBoxTests () {
+    void CheckBox () {
         open("/checkbox");
         $(".rct-title").click();
-//        sleep(5000);
+        sleep(5000);
+
         $("#result").should(appear);
         $("#result").$(byText("You have selected :")).shouldHave(text("You have selected :"));
         $("#result").$(byText("home")).shouldHave(text("home"));

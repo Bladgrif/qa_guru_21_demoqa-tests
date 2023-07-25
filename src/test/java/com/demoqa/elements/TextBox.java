@@ -1,4 +1,4 @@
-package com.demoqa;
+package com.demoqa.elements;
 
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class TextBoxTests {
+public class TextBox {
 
     @BeforeAll
     static void beforeAll() {
@@ -19,7 +19,7 @@ public class TextBoxTests {
     }
 
     @Test
-    void fillFormTest() {
+    void TextBox() {
         open("/text-box");
 
 //        $("[id=userName]").setValue("Roman Grigoriev");
