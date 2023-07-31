@@ -1,29 +1,15 @@
 package com.demoqa.forms;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-
-import java.io.File;
 
 import static com.codeborne.selenide.Condition.appear;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
-public class RegistrationForm {
-
-    @BeforeAll
-    static void beforeAll() {
-        //Ускорение загрузки страниц
-        Configuration.pageLoadStrategy = "eager";
-        //Открытие страницы
-        Configuration.baseUrl = "https://demoqa.com";
-        //Установка размера окна браузера
-        Configuration.browserSize = "1920x1080";
-    }
-
+public class RegistrationFormTest extends BaseTest {
     @Test
     void fileFormTest() {
         //Переход на форму регистрации

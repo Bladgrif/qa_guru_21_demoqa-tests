@@ -22,7 +22,7 @@ public class demoqa {
     }
 
     @Test
-    void demoqa () {
+    void demoqa() {
         open("/automation-practice-form");
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
@@ -42,6 +42,8 @@ public class demoqa {
         $("#userNumber").setValue(userNumber);
         $("#dateOfBirthInput").click();
         $(".react-datepicker__year-select").$(byText("2007")).click();
+//        $("select.react-datepicker__month-select").selectOption("May");
+//        $("select.react-datepicker__month-select").selectOptionByValue("6");
         $(".react-datepicker__month-select").$(byText("July")).click();
         $(".react-datepicker__day--004").click();
         $("#subjectsInput").setValue(Subjects_one).pressEnter();

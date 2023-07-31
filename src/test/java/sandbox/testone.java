@@ -46,7 +46,7 @@ public class testone {
         var find = "ctr + space + space -  поиск методов , лучше чем alt + enter";
         var delet = "crt + alt + o - удаление ненужных импортов";
         var rplce = "ctr + alt + n - заменяем переменную на ее значение везде";
-        var q = "ctr + q - документация обо всем";
+        var qqw = "ctr + q - документация обо всем";
         var zakladka = "ctr + f11 - закладка"; //todo Roman see it
 
 
