@@ -2,6 +2,7 @@ package com.demoqa.pages;
 
 import com.codeborne.selenide.SelenideElement;
 import com.demoqa.pages.components.Calendar;
+import com.demoqa.pages.components.Table;
 
 import static com.codeborne.selenide.Condition.appear;
 import static com.codeborne.selenide.Condition.text;
@@ -11,6 +12,7 @@ import static com.codeborne.selenide.Selenide.executeJavaScript;
 
 public class RegistrationForm {
     Calendar calendar = new Calendar();
+    Table table = new Table();
     SelenideElement firstName = $("#firstName");
     SelenideElement lastName = $("#lastName");
     SelenideElement userEmail = $("#userEmail");
@@ -25,7 +27,7 @@ public class RegistrationForm {
     SelenideElement city = $("#city");
     SelenideElement submit = $("#submit");
     SelenideElement content = $(".modal-content");
-    SelenideElement table = $(".table-responsive");
+//    SelenideElement table = $(".table-responsive");
 
     public RegistrationForm openPage() {
         open("/automation-practice-form");
@@ -108,17 +110,22 @@ public class RegistrationForm {
         return this;
     }
 
-    public RegistrationForm shouldHaveTable(String name, String mail, String male, String number, String birthday, String subject, String hobbies, String image, String adres, String city) {
-        table.$(byText(name)).parent().shouldHave(text("Boby Milligan"));
-        table.$(byText(mail)).parent().shouldHave(text("Boby@Milligan.com"));
-        table.$(byText(male)).parent().shouldHave(text("Male"));
-        table.$(byText(number)).parent().shouldHave(text("8800555353"));
-        table.$(byText(birthday)).parent().shouldHave(text("25 May,2000"));
-        table.$(byText(subject)).parent().shouldHave(text("History"));
-        table.$(byText(hobbies)).parent().shouldHave(text("Reading, Music"));
-        table.$(byText(image)).parent().shouldHave(text("139207535.jpg"));
-        table.$(byText(adres)).parent().shouldHave(text("Anita st.9/4"));
-        table.$(byText(city)).parent().shouldHave(text("Uttar Pradesh Agra"));
+    public RegistrationForm shouldHaveTable(String name, String mail, String male, String number, String birthday, String subject, String hobbies, String image, String adress, String city) {
+        table.checkFields(name, mail, male, number, birthday, subject, hobbies, image, adress, city);
         return this;
     }
+
+//    public RegistrationForm shouldHaveTable(String name, String mail, String male, String number, String birthday, String subject, String hobbies, String image, String adres, String city) {
+//        table.$(byText(name)).parent().shouldHave(text("Boby Milligan"));
+//        table.$(byText(mail)).parent().shouldHave(text("Boby@Milligan.com"));
+//        table.$(byText(male)).parent().shouldHave(text("Male"));
+//        table.$(byText(number)).parent().shouldHave(text("8800555353"));
+//        table.$(byText(birthday)).parent().shouldHave(text("25 May,2000"));
+//        table.$(byText(subject)).parent().shouldHave(text("History"));
+//        table.$(byText(hobbies)).parent().shouldHave(text("Reading, Music"));
+//        table.$(byText(image)).parent().shouldHave(text("139207535.jpg"));
+//        table.$(byText(adres)).parent().shouldHave(text("Anita st.9/4"));
+//        table.$(byText(city)).parent().shouldHave(text("Uttar Pradesh Agra"));
+//        return this;
+//    }
 }

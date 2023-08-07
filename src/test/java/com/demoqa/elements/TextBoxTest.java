@@ -4,10 +4,6 @@ import com.demoqa.BaseTest;
 import com.demoqa.pages.Textbox;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
-
 public class TextBoxTest extends BaseTest {
 
     @Test
