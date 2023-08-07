@@ -1,6 +1,7 @@
 package com.demoqa.elements;
 
 import com.demoqa.BaseTest;
+import com.demoqa.pages.Textbox;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
@@ -11,20 +12,16 @@ public class TextBoxTest extends BaseTest {
 
     @Test
     void TextBox() {
-        open("/text-box");
-
-//        $("[id=userName]").setValue("Roman Grigoriev");
-        $("#userName").setValue("Roman Grigoriev");
-        $("#userEmail").setValue("RomanGrigorev@gmail.com");
-        $("#currentAddress").setValue("Some address 1");
-        $("#permanentAddress").setValue("Another address 2");
-        $("#submit").click();
-
-//        $("#output").$("name").shouldHave(text("Roman Grigoriev"));
-        $("#output #name").shouldHave(text("Roman Grigoriev"));
-        $("#output #email").shouldHave(text("RomanGrigorev@gmail.com"));
-        $("#output #currentAddress").shouldHave(text("Some address 1"));
-        $("#output #permanentAddress").shouldHave(text("Another address 2"));
-
+        Textbox textbox = new Textbox();
+        textbox.openPage()
+                .setUserName("Roman Grigoriev")
+                .setUserEmail("RomanGrigorev@gmail.com")
+                .setCurrentAddress("Some address 1")
+                .setPermanentAddress("Another address 2")
+                .clickSubmit()
+                .checkFields("Roman Grigoriev",
+                        "RomanGrigorev@gmail.com",
+                        "Some address 1",
+                        "Another address 2");
     }
 }
