@@ -1,6 +1,9 @@
-package com.demoqa.forms;
+package com.demoqa.tests;
 
+import com.codeborne.selenide.SelenideElement;
 import com.demoqa.BaseTest;
+import com.demoqa.pages.RegistrationPage;
+import com.demoqa.pages.components.CalendarComponents;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.appear;
@@ -8,35 +11,30 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
-public class RegistrationFormTest extends BaseTest {
-    @Test
-    void fileFormTest() {
-        //Переход на форму регистрации
-        open("/automation-practice-form");
-        //Скрывает рекламу и футер
-        executeJavaScript("$('#fixedban').remove()");
-        executeJavaScript("$('footer').remove()");
+public class RegistrationFormTestWithPageObject extends BaseTest {
 
-        //Заполнение текстовых полей
-        $("#firstName").setValue("Boby");
-        $("#lastName").setValue("Milligan");
-        $("#userEmail").setValue("Boby@Milligan.com");
-        $("#userNumber").setValue("8800555353");
+    RegistrationPage registrationPage = new RegistrationPage();
+
+
+    @Test
+    void RegistrationFormTest() {
+        registrationPage.openPage()
+                .setFirstName("Boby")
+                .setLastName("Milligan")
+                .setUserNumber("8800555353")
+                .setGender("Male")
+                .setUserEmail("Boby@Milligan.com")
+                .setBirthDate("25","May", "2000");
         $("#currentAddress").setValue("Anita st.9/4");
 
         //Выбор пола (поле с выбором из нескольких вариантов)
         $("#genterWrapper").$(byText("Male")).click();
 
         //Установка даты в календаре
-        $("#dateOfBirthInput").click();
-        $("select.react-datepicker__month-select").selectOption("May");
-        $("select.react-datepicker__year-select").selectOption("2000");
-        $(".react-datepicker__day.react-datepicker__day--025").click();
-//        $(".subjectsInput").click();
-
-        //Возможные варианты (пока не знаю для чего)
-//        $("select.react-datepicker__month-select").selectOptionByValue("May");
-//        $("select.react-datepicker__month-select").selectOptionContainingText("May");
+//        $("#dateOfBirthInput").click();
+//        $("select.react-datepicker__month-select").selectOption("May");
+//        $("select.react-datepicker__year-select").selectOption("2000");
+//        $(".react-datepicker__day.react-datepicker__day--025").click();
 
         //Выбор предмета (из выпадающего списка)
         $("#subjectsInput").setValue("History").pressEnter();
@@ -45,9 +43,6 @@ public class RegistrationFormTest extends BaseTest {
         $("#hobbiesWrapper").$(byText("Reading")).click();
         $("#hobbiesWrapper").$(byText("Music")).click();
 
-        //Загрузка изображения
-//        File cv = new File("src/test/java/resources/139207535.jpg");
-//        $("#uploadPicture").uploadFile(cv);
         $("#uploadPicture").uploadFromClasspath("139207535.jpg");
 
         //Выбор города
@@ -58,18 +53,6 @@ public class RegistrationFormTest extends BaseTest {
 
         //Отправка результат (нажатие кнопки)
         $("#submit").click();
-
-        //Проверка заполнения (не самый удачный способ)
-//        $("tbody tr:nth-child(1) td:nth-child(2)").shouldHave(text(("Boby Milligan")));
-//        $("tbody tr:nth-child(2) td:nth-child(2)").shouldHave(text(("Boby@Milligan.com")));
-//        $("tbody tr:nth-child(3) td:nth-child(2)").shouldHave(text(("Male")));
-//        $("tbody tr:nth-child(4) td:nth-child(2)").shouldHave(text(("8800555353")));
-//        $("tbody tr:nth-child(5) td:nth-child(2)").shouldHave(text(("25 May,2000")));
-//        $("tbody tr:nth-child(6) td:nth-child(2)").shouldHave(text(("History")));
-//        $("tbody tr:nth-child(7) td:nth-child(2)").shouldHave(text(("Reading, Music")));
-//        $("tbody tr:nth-child(8) td:nth-child(2)").shouldHave(text(("139207535.jpg")));
-//        $("tbody tr:nth-child(9) td:nth-child(2)").shouldHave(text(("Anita st.9/4")));
-//        $("tbody tr:nth-child(10) td:nth-child(2)").shouldHave(text(("Uttar Pradesh Agra")));
 
         //Проверка открытия таблицы
         $(".modal-content").should(appear);
@@ -88,5 +71,22 @@ public class RegistrationFormTest extends BaseTest {
 
         //Остановка теста на 5 секунд
 //        sleep(10000);
+    }
+
+        @Test
+        void RegistrationFormTestWithMinimal() {
+            registrationPage.openPage()
+                    .setFirstName("Boby")
+                    .setLastName("Milligan")
+                    .setUserNumber("8800555353")
+                    .setGender("Male");
+
+            $("#submit").click();
+
+            $(".modal-content").should(appear);
+
+            registrationPage.checkResultName("Boby Milligan")
+                    .checkResultMale("Male")
+                    .checkResultNumber("8800555353");
     }
 }

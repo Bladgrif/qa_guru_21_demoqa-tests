@@ -1,8 +1,6 @@
 package com.demoqa.elements;
 
-import com.codeborne.selenide.Configuration;
-import com.demoqa.forms.BaseTest;
-import org.junit.jupiter.api.BeforeAll;
+import com.demoqa.BaseTest;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
