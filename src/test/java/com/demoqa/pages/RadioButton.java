@@ -7,11 +7,11 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class RadioButton {
-    SelenideElement noRadio =  $("[for=noRadio]");
-    SelenideElement yesRadio =  $("[for=yesRadio]");
-    SelenideElement yesRadioClicked =  $(".mt-3 .text-success");
-    SelenideElement impressiveRadio =  $("[for=impressiveRadio]");
-    SelenideElement impressiveRadioClicked =  $(".mt-3 .text-success");
+    SelenideElement noRadio =  $("[for=noRadio]"),
+                    yesRadio =  $("[for=yesRadio]"),
+                    yesRadioClicked =  $(".mt-3 .text-success"),
+                    impressiveRadio =  $("[for=impressiveRadio]"),
+                    impressiveRadioClicked =  $(".mt-3 .text-success");
 
 
 

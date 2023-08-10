@@ -13,20 +13,20 @@ import static com.codeborne.selenide.Selenide.executeJavaScript;
 public class RegistrationForm {
     Calendar calendar = new Calendar();
     Table table = new Table();
-    SelenideElement firstName = $("#firstName");
-    SelenideElement lastName = $("#lastName");
-    SelenideElement userEmail = $("#userEmail");
-    SelenideElement userNumber = $("#userNumber");
-    SelenideElement currentAddress = $("#currentAddress");
-    SelenideElement genterWrapper = $("#genterWrapper");
-    SelenideElement birthInput = $("#dateOfBirthInput");
-    SelenideElement subjectsInput = $("#subjectsInput");
-    SelenideElement hobbies = $("#hobbiesWrapper");
-    SelenideElement uploadPicture = $("#uploadPicture");
-    SelenideElement state = $("#state");
-    SelenideElement city = $("#city");
-    SelenideElement submit = $("#submit");
-    SelenideElement content = $(".modal-content");
+    SelenideElement firstName = $("#firstName"),
+                    lastName = $("#lastName"),
+                    userEmail = $("#userEmail"),
+                    userNumber = $("#userNumber"),
+                    currentAddress = $("#currentAddress"),
+                    genterWrapper = $("#genterWrapper"),
+                    birthInput = $("#dateOfBirthInput"),
+                    subjectsInput = $("#subjectsInput"),
+                    hobbies = $("#hobbiesWrapper"),
+                    uploadPicture = $("#uploadPicture"),
+                    state = $("#state"),
+                    city = $("#city"),
+                    submit = $("#submit"),
+                    content = $(".modal-content");
 //    SelenideElement table = $(".table-responsive");
 
     public RegistrationForm openPage() {

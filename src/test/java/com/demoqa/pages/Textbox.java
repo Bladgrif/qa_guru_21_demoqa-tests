@@ -12,15 +12,15 @@ public class Textbox {
         return this;
     }
 
-    SelenideElement userName = $("#userName");
-    SelenideElement userEmail = $("#userEmail");
-    SelenideElement currentAddress = $("#currentAddress");
-    SelenideElement permanentAddress = $("#permanentAddress");
-    SelenideElement submit = $("#submit");
-    SelenideElement checkName = $("#output #name");
-    SelenideElement checkEmail = $("#output #email");
-    SelenideElement checkCurrentAddress = $("#output #currentAddress");
-    SelenideElement checkPermanentAddress = $("#output #permanentAddress");
+    SelenideElement userName = $("#userName"),
+                    userEmail = $("#userEmail"),
+                    currentAddress = $("#currentAddress"),
+                    permanentAddress = $("#permanentAddress"),
+                    submit = $("#submit"),
+                    checkName = $("#output #name"),
+                    checkEmail = $("#output #email"),
+                    checkCurrentAddress = $("#output #currentAddress"),
+                    checkPermanentAddress = $("#output #permanentAddress");
 
 
 
