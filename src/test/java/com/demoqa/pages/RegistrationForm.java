@@ -31,6 +31,10 @@ public class RegistrationForm {
 
     public RegistrationForm openPage() {
         open("/automation-practice-form");
+        return this;
+    }
+
+    public RegistrationForm removeFooter() {
         //Скрывает рекламу и футер
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
