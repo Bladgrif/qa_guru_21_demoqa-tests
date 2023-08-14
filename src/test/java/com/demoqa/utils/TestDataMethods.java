@@ -2,13 +2,12 @@ package com.demoqa.utils;
 
 import com.github.javafaker.Faker;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Locale;
 
-import static com.demoqa.utils.TestDataProperties.*;
-
 public class TestDataMethods {
+
+    TestDataProperties testDataProperties = new TestDataProperties();
+    static Faker faker = new Faker(new Locale("en"));
 
     public static String[] genters = {"Male", "Female", "Other"};
     public static String[] months = {"January", "February", "March", "April", "May", "June",
@@ -16,16 +15,13 @@ public class TestDataMethods {
     public static String[] subjects = {"Accounting", "Arts", "Biology", "Chemistry", "Civics",
             "Economics", "English", "Commerce", "Computer Science", "Physics",
             "Maths", "Hindi", "History", "Social Studies"};
-    public static String[] hobbies = {"Sports" , "Reading", "Music"};
-    public static String[] pictures = {"139207535.jpg" , "familySpy.png", "pikachu.jpg"};
+    public static String[] hobbies = {"Sports", "Reading", "Music"};
+    public static String[] pictures = {"139207535.jpg", "familySpy.png", "pikachu.jpg"};
     public static String[] states = {"NCR", "Uttar Pradesh", "Haryana", "Rajasthan"};
-    public static String[] NCR =  {"Delhi", "Gurgaon", "Noida"};
-    public static String[] Uttar_Pradesh =  {"Agra", "Lucknow", "Merrut"};
-    public static String[] Haryana =  {"Karnal", "Panipat"};
-    public static String[] Rajasthan =  {"Jaipur", "Jaiselmer"};
-
-
-    static Faker faker = new Faker(new Locale("en"));
+    public static String[] NCR = {"Delhi", "Gurgaon", "Noida"};
+    public static String[] Uttar_Pradesh = {"Agra", "Lucknow", "Merrut"};
+    public static String[] Haryana = {"Karnal", "Panipat"};
+    public static String[] Rajasthan = {"Jaipur", "Jaiselmer"};
 
     public static String getRandomFirstName() {
         return faker.name().firstName();
@@ -52,13 +48,15 @@ public class TestDataMethods {
     }
 
     public static String getRandomBirthDateDay() {
-        return String.valueOf(faker.number().numberBetween(10,28));
+        return String.valueOf(faker.number().numberBetween(10, 28));
     }
+
     public static String getRandomBirthDateMonth() {
         return faker.options().option(months);
     }
+
     public static String getRandomBirthDateYear() {
-        return String.valueOf(faker.number().numberBetween(1900,2100));
+        return String.valueOf(faker.number().numberBetween(1900, 2100));
     }
 
     public static String getRandomSubjectsInput() {
@@ -77,7 +75,7 @@ public class TestDataMethods {
         return faker.options().option(states);
     }
 
-    public static String getRandomCity() {
+    public static String getRandomCity(String state) {
         switch (state) {
             case "NCR":
                 return faker.options().option(NCR);
