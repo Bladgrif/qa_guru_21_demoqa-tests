@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.executeJavaScript;
 
-public class RegistrationForm {
+public class RegistrationPage {
     Calendar calendar = new Calendar();
     Table table = new Table();
     SelenideElement firstNameInput = $("#firstName"),
@@ -28,95 +28,92 @@ public class RegistrationForm {
                     content = $(".modal-content");
 //    SelenideElement table = $(".table-responsive");
 
-    public RegistrationForm openPage() {
+    public RegistrationPage openPage() {
         open("/automation-practice-form");
         return this;
     }
 
-    public RegistrationForm removeFooter() {
+    public RegistrationPage removeFooter() {
         //Скрывает рекламу и футер
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
         return this;
     }
 
-    public RegistrationForm setFirstName(String value) {
+    public RegistrationPage setFirstName(String value) {
         firstNameInput.setValue(value);
         return this;
     }
 
-    public RegistrationForm setLastName(String value) {
+    public RegistrationPage setLastName(String value) {
         lastNameInput.setValue(value);
         return this;
     }
 
-    public RegistrationForm setUserEmail(String value) {
+    public RegistrationPage setUserEmail(String value) {
         userEmailInput.setValue(value);
         return this;
     }
 
-    public RegistrationForm setUserNumber(String value) {
+    public RegistrationPage setUserNumber(String value) {
         userNumberInput.setValue(value);
         return this;
     }
 
-    public RegistrationForm setCurrentAddress(String value) {
+    public RegistrationPage setCurrentAddress(String value) {
         currentAddressInput.setValue(value);
         return this;
     }
 
-    public RegistrationForm setGenterWrapper(String value) {
+    public RegistrationPage setGenterWrapper(String value) {
         genterWrapperInput.$(byText(value)).click();
         return this;
     }
 
-    public RegistrationForm setSubjectsInput(String value) {
+    public RegistrationPage setSubjectsInput(String value) {
         subjectsInput.setValue(value).pressEnter();
         return this;
     }
 
-    public RegistrationForm setHobbies(String value) {
+    public RegistrationPage setHobbies(String value) {
         hobbiesInput.$(byText(value)).click();
         return this;
     }
 
-    public RegistrationForm setUploadPicture(String value) {
+    public RegistrationPage setUploadPicture(String value) {
         uploadPicture.uploadFromClasspath(value);
         return this;
     }
 
-    public RegistrationForm setState(String value) {
+    public RegistrationPage setState(String value) {
         stateInput.click();
         stateInput.$(byText(value)).click();
         return this;
     }
 
-    public RegistrationForm setCity(String value) {
+    public RegistrationPage setCity(String value) {
         cityInput.click();
         cityInput.$(byText(value)).click();
         return this;
     }
 
-    public RegistrationForm click() {
+    public RegistrationPage click() {
         submit.click();
         return this;
     }
 
-    public RegistrationForm checkTable() {
+    public RegistrationPage checkTable() {
         content.should(appear);
         return this;
     }
 
-    public RegistrationForm setBirthDate(String day, String month, String year) {
+    public RegistrationPage setBirthDate(String day, String month, String year) {
         birthInput.click();
         calendar.setDate(day, month, year);
         return this;
     }
 
-    public RegistrationForm shouldHaveTable(String name, String mail, String male, String number, String birthday, String subject, String hobbies, String image, String adress, String city) {
-        table.checkFields(name, mail, male, number, birthday, subject, hobbies, image, adress, city);
-        return this;
-    }
+
 
 //    public RegistrationForm shouldHaveTable(String name, String mail, String male, String number, String birthday, String subject, String hobbies, String image, String adres, String city) {
 //        table.$(byText(name)).parent().shouldHave(text("Boby Milligan"));

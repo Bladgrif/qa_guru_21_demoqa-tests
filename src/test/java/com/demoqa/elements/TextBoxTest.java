@@ -19,5 +19,6 @@ public class TextBoxTest extends BaseTest {
                         "RomanGrigorev@gmail.com",
                         "Some address 1",
                         "Another address 2");
+
     }
 }

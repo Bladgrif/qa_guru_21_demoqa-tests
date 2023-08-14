@@ -12,10 +12,10 @@ public class Textbox {
         return this;
     }
 
-    SelenideElement userName = $("#userName"),
-                    userEmail = $("#userEmail"),
-                    currentAddress = $("#currentAddress"),
-                    permanentAddress = $("#permanentAddress"),
+    SelenideElement userNameInput = $("#userName"),
+                    userEmailInput = $("#userEmail"),
+                    currentAddressInput = $("#currentAddress"),
+                    permanentAddressInput = $("#permanentAddress"),
                     submit = $("#submit"),
                     checkName = $("#output #name"),
                     checkEmail = $("#output #email"),
@@ -25,21 +25,21 @@ public class Textbox {
 
 
     public Textbox setUserName (String value) {
-        userName.setValue(value);
+        userNameInput.setValue(value);
         return this;
     }
     public Textbox setUserEmail (String value) {
-        userEmail.setValue(value);
+        userEmailInput.setValue(value);
         return this;
     }
 
     public Textbox setCurrentAddress (String value) {
-        currentAddress.setValue(value);
+        currentAddressInput.setValue(value);
         return this;
     }
 
     public Textbox setPermanentAddress (String value) {
-        permanentAddress.setValue(value);
+        permanentAddressInput.setValue(value);
         return this;
     }
 

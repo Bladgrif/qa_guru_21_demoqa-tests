@@ -6,18 +6,18 @@ public class TestDataProperties {
 
     TestDataMethods testDataMethods = new TestDataMethods();
 
-    public static String firstName = getRandomFirstName(),
-            lastName = getRandomLastName(),
-            userEmail = getRandomUserEmail(),
-            userNumber = getRandomUserNumber(),
-            currentAddress = getRandomCurrentAddress(),
-            genterWrapper = getRandomGenterWrapper(),
-            birthDateDay = getRandomBirthDateDay(),
-            birthDateMonth = getRandomBirthDateMonth(),
-            birthDateYear = getRandomBirthDateYear(),
-            subjectsInput = getRandomSubjectsInput(),
-            hobbie = getRandomHobbies(),
-            uploadPicture = getRandomUploadPicture(),
-            state = getRandomState(),
-            city = getRandomCity(state);
+    public String firstName = testDataMethods.getRandomFirstName(),
+            lastName = testDataMethods.getRandomLastName(),
+            userEmail = testDataMethods.getRandomUserEmail(),
+            userNumber = testDataMethods.getRandomUserNumber(),
+            currentAddress = testDataMethods.getRandomCurrentAddress(),
+            genterWrapper = testDataMethods.getRandomGenterWrapper(),
+            birthDateDay = testDataMethods.getRandomBirthDateDay(),
+            birthDateMonth = testDataMethods.getRandomBirthDateMonth(),
+            birthDateYear = testDataMethods.getRandomBirthDateYear(),
+            subjectsInput = testDataMethods.getRandomSubjectsInput(),
+            hobbie = testDataMethods.getRandomHobbies(),
+            uploadPicture = testDataMethods.getRandomUploadPicture(),
+            state = testDataMethods.getRandomState(),
+            city = testDataMethods.getRandomCity(state);
 }

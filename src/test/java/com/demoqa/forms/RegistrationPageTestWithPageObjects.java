@@ -1,16 +1,19 @@
 package com.demoqa.forms;
 
 import com.demoqa.BaseTest;
-import com.demoqa.pages.RegistrationForm;
+import com.demoqa.pages.RegistrationPage;
+import com.demoqa.pages.ResultPage;
 import org.junit.jupiter.api.Test;
 
-public class RegistrationFormTestWithPageObjects extends BaseTest {
+public class RegistrationPageTestWithPageObjects extends BaseTest {
+
     @Test
     void fileFormTest() {
 
-        RegistrationForm registrationform = new RegistrationForm();
+        RegistrationPage registrationPage = new RegistrationPage();
+        ResultPage resultPage = new ResultPage();
 
-        registrationform.openPage()
+        registrationPage.openPage()
                 .removeFooter()
                 .setFirstName("Boby")
                 .setLastName("Milligan")
@@ -26,8 +29,9 @@ public class RegistrationFormTestWithPageObjects extends BaseTest {
                 .setState("Uttar Pradesh")
                 .setCity("Agra")
                 .click()
-                .checkTable()
-                .shouldHaveTable("Boby Milligan",
+                .checkTable();
+
+        resultPage.checkResult("Boby Milligan",
                         "Boby@Milligan.com",
                         "Male",
                         "8800555353",

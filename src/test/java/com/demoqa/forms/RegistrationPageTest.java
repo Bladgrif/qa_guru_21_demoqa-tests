@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
-public class RegistrationFormTest extends BaseTest {
+public class RegistrationPageTest extends BaseTest {
     @Test
     void fileFormTest() {
         //Переход на форму регистрации
