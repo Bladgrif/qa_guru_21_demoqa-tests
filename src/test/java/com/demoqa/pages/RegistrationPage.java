@@ -5,7 +5,6 @@ import com.demoqa.pages.components.Calendar;
 import com.demoqa.pages.components.Table;
 
 import static com.codeborne.selenide.Condition.appear;
-import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.executeJavaScript;
@@ -13,18 +12,18 @@ import static com.codeborne.selenide.Selenide.executeJavaScript;
 public class RegistrationForm {
     Calendar calendar = new Calendar();
     Table table = new Table();
-    SelenideElement firstName = $("#firstName"),
-                    lastName = $("#lastName"),
-                    userEmail = $("#userEmail"),
-                    userNumber = $("#userNumber"),
-                    currentAddress = $("#currentAddress"),
-                    genterWrapper = $("#genterWrapper"),
+    SelenideElement firstNameInput = $("#firstName"),
+                    lastNameInput = $("#lastName"),
+                    userEmailInput = $("#userEmail"),
+                    userNumberInput = $("#userNumber"),
+                    currentAddressInput = $("#currentAddress"),
+                    genterWrapperInput = $("#genterWrapper"),
                     birthInput = $("#dateOfBirthInput"),
                     subjectsInput = $("#subjectsInput"),
-                    hobbies = $("#hobbiesWrapper"),
+                    hobbiesInput = $("#hobbiesWrapper"),
                     uploadPicture = $("#uploadPicture"),
-                    state = $("#state"),
-                    city = $("#city"),
+                    stateInput = $("#state"),
+                    cityInput = $("#city"),
                     submit = $("#submit"),
                     content = $(".modal-content");
 //    SelenideElement table = $(".table-responsive");
@@ -42,32 +41,32 @@ public class RegistrationForm {
     }
 
     public RegistrationForm setFirstName(String value) {
-        firstName.setValue(value);
+        firstNameInput.setValue(value);
         return this;
     }
 
     public RegistrationForm setLastName(String value) {
-        lastName.setValue(value);
+        lastNameInput.setValue(value);
         return this;
     }
 
     public RegistrationForm setUserEmail(String value) {
-        userEmail.setValue(value);
+        userEmailInput.setValue(value);
         return this;
     }
 
     public RegistrationForm setUserNumber(String value) {
-        userNumber.setValue(value);
+        userNumberInput.setValue(value);
         return this;
     }
 
     public RegistrationForm setCurrentAddress(String value) {
-        currentAddress.setValue(value);
+        currentAddressInput.setValue(value);
         return this;
     }
 
     public RegistrationForm setGenterWrapper(String value) {
-        genterWrapper.$(byText(value)).click();
+        genterWrapperInput.$(byText(value)).click();
         return this;
     }
 
@@ -77,7 +76,7 @@ public class RegistrationForm {
     }
 
     public RegistrationForm setHobbies(String value) {
-        hobbies.$(byText(value)).click();
+        hobbiesInput.$(byText(value)).click();
         return this;
     }
 
@@ -87,14 +86,14 @@ public class RegistrationForm {
     }
 
     public RegistrationForm setState(String value) {
-        state.click();
-        state.$(byText(value)).click();
+        stateInput.click();
+        stateInput.$(byText(value)).click();
         return this;
     }
 
     public RegistrationForm setCity(String value) {
-        city.click();
-        city.$(byText(value)).click();
+        cityInput.click();
+        cityInput.$(byText(value)).click();
         return this;
     }
 
