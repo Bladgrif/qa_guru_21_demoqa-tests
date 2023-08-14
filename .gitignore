@@ -4,3 +4,6 @@
 .gradle
 /.idea
 build/
+gradlew
+gradlew.bat
+README.md
