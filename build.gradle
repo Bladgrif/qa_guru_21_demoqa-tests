@@ -17,9 +17,11 @@ dependencies {
             "com.github.javafaker:javafaker:1.0.2")
 }
 
-tasks.withType(JavaCompile) {
-    options.encoding = 'UTF-8'
-}
+//tasks.withType(JavaCompile) {
+//    options.encoding = 'UTF-8'
+//}
+
+compileTestJava.options.encoding = 'UTF-8'
 
 test {
     useJUnitPlatform()
